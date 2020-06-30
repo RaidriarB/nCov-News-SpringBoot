@@ -37,7 +37,7 @@
                         <td th:text="${TextStorage.url}"></td>
                         <td th:text="${TextStorage.publish_time}"></td>
                         <td th:text="${TextStorage.content}"></td>
-                        <td><a class="btn btn-danger" th:href="@{/textstorage/delete/{TextStorageId}(TextStorageId=${TextStorage.id})}">删除</a></td>
+                        <td><a class="btn btn-danger" th:href="@{/textstorage/delete/{TextStorageId}(TextStorageId=${TextStorage.uid})}">删除</a></td>
                     </tr>
                 </tbody>
             </table>

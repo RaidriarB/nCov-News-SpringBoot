@@ -20,6 +20,9 @@ GET /statresult/list  返回统计数据列表
 GET /textstorage/list  返回网页信息列表
 示例：
 [{"uid":1,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶一下，你就知道。"}]
+
+GET /res/cluster  返回聚类图片
+GET /res/wordcloud  返回词云html
 ```
 
 
