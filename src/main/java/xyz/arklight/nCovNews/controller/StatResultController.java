@@ -11,6 +11,8 @@ import xyz.arklight.nCovNews.service.TextStorageService;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -21,14 +23,6 @@ public class StatResultController {
 
     @Autowired
     TextStorageService textStorageService;
-
-    /*
-    @RequestMapping("/list")
-    public List<StatResult> getStatResultList(){
-        List<StatResult> list = statResultService.findAll();
-        return list;
-    }
-    */
 
     @RequestMapping("/list")
     public List<SiteInfo> getStatResultList() {
@@ -56,7 +50,7 @@ public class StatResultController {
                     }
 
                     //将热度值乘以10000，再取整，转为字符串
-                    double hsd = result.getHot_spot_degree() * 10000;
+                    double hsd = result.getHot_spot_degree();
                     int hsd_int = (int)hsd;
                     hot_spot_degree = String.valueOf(hsd_int);
 
@@ -74,6 +68,16 @@ public class StatResultController {
             list.add(info);
             System.out.println(info);
         }
+        return list;
+    }
+
+    @RequestMapping("/sortedlist")
+    public List<SiteInfo> getSortedStatResultList(){
+        List<SiteInfo> list = getStatResultList();
+        Collections.sort(list,(s1,s2)->{
+            return - ( Integer.parseInt(s1.getHot_spot_degree())
+                    - Integer.parseInt(s2.getHot_spot_degree()) );
+        });
         return list;
     }
 }
