@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class MVCConfig implements WebMvcConfigurer {
     /**
-     * 配置路由
+     * 配置admin路由
      * @param registry
      */
     @Override
