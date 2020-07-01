@@ -9,6 +9,5 @@ public class MVCConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/admin").setViewName("TextStorageList");
-        registry.addViewController("/login").setViewName("login");
     }
 }

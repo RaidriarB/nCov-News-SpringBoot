@@ -3,8 +3,8 @@ package xyz.arklight.nCovNews.model.bean;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 /**
  * 存储网页内容

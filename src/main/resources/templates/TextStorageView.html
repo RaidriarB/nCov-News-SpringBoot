@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/default.css}" rel="stylesheet"/>
+    <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+</head>
+
+<body>
+
+<div class="contentDiv">
+
+    <legend>
+        <strong>网页详细信息</strong>
+    </legend>
+
+    <div><a class="btn btn-primary" href="/admin" role="button">返回</a></div>
+    <h2 th:text="${TextStorage.title}"></h2>
+
+    <table border="7" >
+        <tr>
+            <td>uid</td>
+            <td>hash</td>
+            <td>url</td>
+            <td>发布时间</td>
+        </tr>
+        <tr>
+            <td th:text="${TextStorage.uid}"></td>
+            <td th:text="${TextStorage.hash}"></td>
+            <td th:text="${TextStorage.url}"></td>
+            <td th:text="${TextStorage.publish_time}"></td>
+        </tr>
+
+    </table>
+    <hr>
+    <p th:text="${TextStorage.content}"></p>
+
+</div>
+
+</body>
+</html>

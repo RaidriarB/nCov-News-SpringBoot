@@ -2,9 +2,4 @@
 .contentDiv
 {
     padding:20px 60px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 250px;
-    height: 400px;
 }

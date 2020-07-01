@@ -26,23 +26,20 @@
                         <th>哈希</th>
                         <th>链接</th>
                         <th>发布时间</th>
-                        <th>内容</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="TextStorage : ${TextStorageList}">
                         <th scope="row" th:text="${TextStorage.uid}"></th>
-                        <td><a th:href="@{/textstorage/update/{TextStorageId}(TextStorageId=${TextStorage.uid})}" th:text="${TextStorage.title}"></a></td>
+                        <td><a th:href="@{/admin/{TextStorageId}(TextStorageId=${TextStorage.uid})}" th:text="${TextStorage.title}"></a></td>
                         <td th:text="${TextStorage.hash}"></td>
                         <td th:text="${TextStorage.url}"></td>
                         <td th:text="${TextStorage.publish_time}"></td>
-                        <td th:text="${TextStorage.content}"></td>
-                        <td><a class="btn btn-danger" th:href="@{/textstorage/delete/{TextStorageId}(TextStorageId=${TextStorage.uid})}">删除</a></td>
+                        <!--<td th:text="${TextStorage.content}"></td>-->
                     </tr>
                 </tbody>
             </table>
 
-            <div><a class="btn btn-primary" href="/admin/create" role="button">创建网页信息</a></div>
         </div>
 
     </body>
