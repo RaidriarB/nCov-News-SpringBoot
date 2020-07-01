@@ -47,6 +47,8 @@ GET /res/wordcloud  返回词云JSON
 
 ## 使用方法
 
+### Deploy
+
 在项目目录`/target`下有一个jar包，名字是nCovNews-0.0.1-SNAPSHOT.jar，直接执行这个文件就可以。
 
 ```
@@ -54,4 +56,8 @@ java -jar nCovNews-0.0.1-SNAPSHOT.jar
 ```
 
 注意在jar包的所在目录建一个文件夹`temp`，其中存放聚类和词云生成的图片。
+
+### 项目源代码
+
+需要修改一下配置文件中的数据库连接信息。
 
