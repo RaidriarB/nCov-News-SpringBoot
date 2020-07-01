@@ -3,6 +3,7 @@ package xyz.arklight.nCovNews.model.bean;
 import org.springframework.context.annotation.Bean;
 
 import javax.persistence.Entity;
+import java.text.DecimalFormat;
 
 public class SiteInfo {
 
@@ -11,9 +12,9 @@ public class SiteInfo {
     private Long uid;
     private String keyword;
     private String url;
-    private double hot_spot_degree;
+    private String hot_spot_degree;
 
-    public SiteInfo(Long uid, String keyword, String url, double hot_spot_degree) {
+    public SiteInfo(Long uid, String keyword, String url, String hot_spot_degree) {
         this.uid = uid;
         this.keyword = keyword;
         this.url = url;
@@ -48,11 +49,21 @@ public class SiteInfo {
         this.url = url;
     }
 
-    public double getHot_spot_degree() {
+    public String getHot_spot_degree() {
         return hot_spot_degree;
     }
 
-    public void setHot_spot_degree(double hot_spot_degree) {
+    public void setHot_spot_degree(String hot_spot_degree) {
         this.hot_spot_degree = hot_spot_degree;
+    }
+
+    @Override
+    public String toString() {
+        return "SiteInfo{" +
+                "uid=" + uid +
+                ", keyword='" + keyword + '\'' +
+                ", url='" + url + '\'' +
+                ", hot_spot_degree='" + hot_spot_degree + '\'' +
+                '}';
     }
 }

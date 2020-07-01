@@ -9,6 +9,7 @@ import xyz.arklight.nCovNews.model.bean.TextStorage;
 import xyz.arklight.nCovNews.service.StatResultService;
 import xyz.arklight.nCovNews.service.TextStorageService;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class StatResultController {
             Long uid = textStorage.getUid();
             String url = textStorage.getUrl();
             String keyword = null;
-            double hot_spot_degree = -1;
+            String hot_spot_degree = null;
 
             for (StatResult result : resultList) {
                 if (result.getNo().equals(uid)) {
@@ -51,7 +52,9 @@ public class StatResultController {
                         e.printStackTrace();
                         System.out.println("该网站数据的catagory字段不合法！应该在1-5之间");
                     }
-                    hot_spot_degree = result.getHot_spot_degree();
+                    double hsd = result.getHot_spot_degree();
+                    hot_spot_degree = new DecimalFormat("0.00000000").format(hsd);
+
                     break;
                 } else {
                     continue;
@@ -60,6 +63,7 @@ public class StatResultController {
 
             SiteInfo info = new SiteInfo(uid, keyword, url, hot_spot_degree);
             list.add(info);
+            System.out.println(info);
         }
         return list;
     }

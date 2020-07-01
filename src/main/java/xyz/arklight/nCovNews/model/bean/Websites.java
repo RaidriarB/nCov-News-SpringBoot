@@ -4,12 +4,17 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Websites {
 
+
+    //主键自动增长策略问题
+    //如果不设置可能会造成Table 'covid_db.hibernate_sequence' doesn't exist错误。
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long uid;
     @NotNull
     private String start_url;

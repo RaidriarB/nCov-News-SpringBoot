@@ -14,19 +14,32 @@
 
 所有接口一律按照数据库建表语句顺序返回JSON数据。
 
+考虑到前端适配，接口并非REST风格。所有接口都使用GET方法请求，不需要PUT、DELETE等方法。
+
 ```json
 GET /statresult/list  返回网页信息对应的统计数据列表
-示例：
+返回结果示例：
 [{"uid":1,"keyword":"输入","url":"http://www.baidu.com","hot_spot_degree":1.0E-6},{"uid":2,"keyword":null,"url":"http://www.baidu.com","hot_spot_degree":-1.0}]
 注意：有的网页信息可能没有统计数据，此时keyword为null，而热度值（hot_spot_degree）为-1。
 
 GET /websites/list  返回监测网站列表
-示例:
+返回结果示例:
 [{"uid":1,"start_url":"souhu.com","name":"搜狐"},{"uid":2,"start_url":"sina.com.cn","name":"新浪"}]
 
+GET /websites/add/{name}/{url}  添加检测网站，返回操作是否成功的信息
+示例：GET /websites/add/testname/testurl
+{"code":1,"message":"操作成功"}
+
+GET /websites/delete/{uid}  根据uid来删除监测网站，返回操作是否成功信息
+示例1 GET /websites/delete/41
+{"code":1,"message":"操作成功"}
+示例2 GET /websites/delete/1000
+{"code":-1,"message":"操作失败"}
+
 GET /textstorage/list  返回网页信息列表
-示例：
+返回结果示例：
 [{"uid":1,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶一下，你就知道。"}]
+
 
 GET /res/cluster  返回聚类图片
 GET /res/wordcloud  返回词云JSON
