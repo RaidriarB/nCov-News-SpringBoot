@@ -52,7 +52,7 @@ public class StatResultController {
                         keyword = SiteInfo.keywordlist[result.getCategory()];
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("该网站数据的catagory字段不合法！应该在1-5之间");
+                        System.out.println("该网站数据的catagory字段不合法！应该在0-4之间");
                     }
 
                     //将热度值乘以10000，再取整，转为字符串
