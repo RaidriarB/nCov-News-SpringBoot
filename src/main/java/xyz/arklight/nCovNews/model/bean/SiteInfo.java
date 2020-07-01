@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 
 public class SiteInfo {
 
-    public static String[] keywordlist = {null,"确诊","输入","新冠","新增","境外"};
+    public static String[] keywordlist = {"确诊","输入","新冠","新增","境外"};
 
     private Long uid;
     private String keyword;
