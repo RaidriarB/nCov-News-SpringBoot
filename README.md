@@ -21,14 +21,8 @@
 **网页统计信息 /statresult/...**
 
 ```json
-1.返回网页信息对应的统计数据列表
+1.返回按照热度降序排序的网页统计信息列表
 GET /statresult/list
-返回结果示例：
-[{"uid":4,"keyword":null,"url":"https://news.sina.com.cn/c/2020-07-01/doc-iircuyvk1342632.shtml","hot_spot_degree":"14837","confidence":"1.000000"},{"uid":6,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-07-01/doc-iircuyvk1346566.shtml","hot_spot_degree":"14410","confidence":"1.000000"},{"uid":9,"keyword":"新增","url":"https://news.sina.com.cn/c/2020-07-01/doc-iircuyvk1347939.shtml","hot_spot_degree":"8912","confidence":"1.000000"}]
-已经修复null信息的bug。只要数据库正确，所有网页都有对应的统计信息。
-
-2.返回按照热度降序排序的网页统计信息列表
-GET /statresult/sortedlist
 返回结果示例：
 [{"uid":180,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-06-28/doc-iircuyvk0885954.shtml","hot_spot_degree":"4655","confidence":"0.954316"},{"uid":335,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-06-29/doc-iirczymk9606132.shtml","hot_spot_degree":"4297","confidence":"0.952713"},{"uid":186,"keyword":"新冠","url":"https://news.sina.com.cn/c/2020-06-28/doc-iirczymk9412741.shtml","hot_spot_degree":"4034","confidence":"0.954198"},{"uid":169,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-06-28/doc-iircuyvk0883475.shtml","hot_spot_degree":"4031","confidence":"0.953492"}]
 ```

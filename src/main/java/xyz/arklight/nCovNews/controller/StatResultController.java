@@ -24,7 +24,7 @@ public class StatResultController {
     @Autowired
     TextStorageService textStorageService;
 
-    @RequestMapping("/list")
+    //@RequestMapping("/list")
     public List<SiteInfo> getStatResultList() {
         List<StatResult> resultList = statResultService.findAll();
         List<TextStorage> textStorageList = textStorageService.findAll();
@@ -71,7 +71,7 @@ public class StatResultController {
         return list;
     }
 
-    @RequestMapping("/sortedlist")
+    @RequestMapping("/list")
     public List<SiteInfo> getSortedStatResultList(){
         List<SiteInfo> list = getStatResultList();
         Collections.sort(list,(s1,s2)->{
