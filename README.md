@@ -19,8 +19,8 @@
 ```json
 GET /statresult/list  返回网页信息对应的统计数据列表
 返回结果示例：
-[{"uid":1,"keyword":"输入","url":"http://www.baidu.com","hot_spot_degree":1.0E-6},{"uid":2,"keyword":null,"url":"http://www.baidu.com","hot_spot_degree":-1.0}]
-注意：有的网页信息可能没有统计数据，此时keyword为null，而热度值（hot_spot_degree）为-1。
+[{"uid":4,"keyword":null,"url":"https://news.sina.com.cn/c/2020-07-01/doc-iircuyvk1342632.shtml","hot_spot_degree":"14837","confidence":"1.000000"},{"uid":6,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-07-01/doc-iircuyvk1346566.shtml","hot_spot_degree":"14410","confidence":"1.000000"},{"uid":9,"keyword":"新增","url":"https://news.sina.com.cn/c/2020-07-01/doc-iircuyvk1347939.shtml","hot_spot_degree":"8912","confidence":"1.000000"}]
+注意：有的网页信息可能没有统计数据，此时keyword、hot_spot_degree、confidence值某项可能为null。
 
 GET /websites/list  返回监测网站列表
 返回结果示例:
