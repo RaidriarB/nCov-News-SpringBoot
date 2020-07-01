@@ -30,7 +30,7 @@ public class ResourceController {
             //json起始位置，根据文件结构是第二个大括号
             int pstart = content.indexOf("{",content.indexOf("{")+1);
             //json终止位置，根据文件结构是倒数第一个反大括号
-            int pend = content.lastIndexOf("}");
+            int pend = content.lastIndexOf("}")+1;
             String new_content = content.substring(pstart,pend);
             System.out.println(new_content);
             byte[] new_bytes = new_content.getBytes("utf-8");
