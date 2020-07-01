@@ -10,6 +10,9 @@ import xyz.arklight.nCovNews.service.WebsitesService;
 
 import java.util.List;
 
+/**
+ * 自定义爬取列表的Controller
+ */
 @RestController
 @RequestMapping("/websites")
 public class WebsitesController {
@@ -17,12 +20,22 @@ public class WebsitesController {
     @Autowired
     WebsitesService websitesService;
 
+    /**
+     * 返回爬取网站的列表
+     * @return 网站列表
+     */
     @RequestMapping("list")
     public List<Websites> getWebsitesList(){
         List<Websites> list = websitesService.findAll();
         return list;
     }
 
+    /**
+     * 添加一个爬取的网站
+     * @param name 网站名称
+     * @param url 网站URL
+     * @return 操作是否成功
+     */
     @RequestMapping("add/{name}/{url}")
     public OpResult addWebsites(@PathVariable String name,
                                 @PathVariable String url){
@@ -37,6 +50,12 @@ public class WebsitesController {
             return OpResult.FAILURE;
         }
     }
+
+    /**
+     * 删除一个爬取的网站
+     * @param uid 网站的uid
+     * @return 操作是否成功
+     */
     @RequestMapping("delete/{uid}")
     public OpResult deleteWebsites(@PathVariable Long uid){
         try{

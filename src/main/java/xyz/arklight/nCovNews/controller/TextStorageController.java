@@ -11,12 +11,20 @@ import xyz.arklight.nCovNews.service.TextStorageService;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * 爬取网页的Controller
+ * 用于获取爬取的网页列表和详细内容
+ */
 @RestController
 @RequestMapping("/textstorage")
 public class TextStorageController {
     @Autowired
     TextStorageService textStorageService;
 
+    /**
+     *
+     * @return 爬取网页列表
+     */
     @RequestMapping("/list")
     public List<TextStorage> getTextStorageList(){
         List<TextStorage> list = textStorageService.findAll();

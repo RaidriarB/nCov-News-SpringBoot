@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import xyz.arklight.nCovNews.model.bean.TextStorage;
 import xyz.arklight.nCovNews.service.TextStorageService;
 
-import javax.validation.Valid;
-
+/**
+ * admin路由的Controller
+ * 用于查看爬取的文档信息
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminController {

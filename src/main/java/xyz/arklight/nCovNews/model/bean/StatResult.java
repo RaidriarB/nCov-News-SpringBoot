@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 实体类，对应数据库中的statistics_result表
+ */
 @Entity
 @Table(name="statistics_result")
 public class StatResult {

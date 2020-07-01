@@ -5,8 +5,12 @@ import org.springframework.context.annotation.Bean;
 import javax.persistence.Entity;
 import java.text.DecimalFormat;
 
+/**
+ * 这个类用来聚合统计数据和网页信息
+ */
 public class SiteInfo {
 
+    //在数据库中的表示为0-4
     public static String[] keywordlist = {"确诊","输入","新冠","新增","境外"};
 
     private Long uid;

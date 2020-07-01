@@ -7,11 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 实体类，用来对应数据库中websites表
+ */
 @Entity
 public class Websites {
 
 
-    //主键自动增长策略问题
+    //主键自动增长策略问题，默认是不符合要求的
     //如果不设置可能会造成Table 'covid_db.hibernate_sequence' doesn't exist错误。
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

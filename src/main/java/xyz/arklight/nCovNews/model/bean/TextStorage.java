@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * 存储网页内容
+ * 实体类，用来对应数据库的textstorage表，存储网页内容
  */
 @Entity
 public class TextStorage {

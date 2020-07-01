@@ -2,7 +2,7 @@ package xyz.arklight.nCovNews.model.bean;
 
 /**
  * 这个类用来返回数据操作的结果。
- * 比如对Websites进行增加和删除，会返回对应的message。
+ * 比如对Websites进行增加和删除，会返回对应的message
  */
 public class OpResult {
 

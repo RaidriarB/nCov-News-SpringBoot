@@ -12,9 +12,12 @@ import xyz.arklight.nCovNews.service.TextStorageService;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
+/**
+ * 统计信息的Controller
+ * 返回爬取网页的统计信息相关
+ */
 @RestController
 @RequestMapping("/statresult")
 public class StatResultController {
@@ -24,6 +27,10 @@ public class StatResultController {
     @Autowired
     TextStorageService textStorageService;
 
+    /**
+     * 获取统计信息的列表
+     * @return 统计信息列表
+     */
     //@RequestMapping("/list")
     public List<SiteInfo> getStatResultList() {
         List<StatResult> resultList = statResultService.findAll();
@@ -71,6 +78,11 @@ public class StatResultController {
         return list;
     }
 
+
+    /**
+     * 获取降序排序的统计信息列表
+     * @return 降序的统计信息列表
+     */
     @RequestMapping("/list")
     public List<SiteInfo> getSortedStatResultList(){
         List<SiteInfo> list = getStatResultList();
