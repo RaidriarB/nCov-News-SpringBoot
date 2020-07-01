@@ -13,12 +13,22 @@ public class SiteInfo {
     private String keyword;
     private String url;
     private String hot_spot_degree;
+    private String confidence;
 
-    public SiteInfo(Long uid, String keyword, String url, String hot_spot_degree) {
+    public SiteInfo(Long uid, String keyword, String url, String hot_spot_degree, String confidence) {
         this.uid = uid;
         this.keyword = keyword;
         this.url = url;
         this.hot_spot_degree = hot_spot_degree;
+        this.confidence = confidence;
+    }
+
+    public String getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(String confidence) {
+        this.confidence = confidence;
     }
 
     public static void setKeywordlist(String[] keywordlist) {

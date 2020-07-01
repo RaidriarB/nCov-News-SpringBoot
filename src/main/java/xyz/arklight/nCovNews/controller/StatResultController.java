@@ -42,6 +42,8 @@ public class StatResultController {
             String url = textStorage.getUrl();
             String keyword = null;
             String hot_spot_degree = null;
+            String confidence = null;
+
 
             for (StatResult result : resultList) {
                 if (result.getNo().equals(uid)) {
@@ -52,8 +54,15 @@ public class StatResultController {
                         e.printStackTrace();
                         System.out.println("该网站数据的catagory字段不合法！应该在1-5之间");
                     }
-                    double hsd = result.getHot_spot_degree();
-                    hot_spot_degree = new DecimalFormat("0.00000000").format(hsd);
+
+                    //将热度值乘以10000，再取整，转为字符串
+                    double hsd = result.getHot_spot_degree() * 10000;
+                    int hsd_int = (int)hsd;
+                    hot_spot_degree = String.valueOf(hsd_int);
+
+                    //可信度转为字符串
+                    double cfd = result.getConfidence();
+                    confidence = new DecimalFormat("0.000000").format(cfd);
 
                     break;
                 } else {
@@ -61,7 +70,7 @@ public class StatResultController {
                 }
             }
 
-            SiteInfo info = new SiteInfo(uid, keyword, url, hot_spot_degree);
+            SiteInfo info = new SiteInfo(uid, keyword, url, hot_spot_degree,confidence);
             list.add(info);
             System.out.println(info);
         }
