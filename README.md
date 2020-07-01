@@ -14,7 +14,7 @@
 
 ## 接口
 
-所有接口一律按照数据库建表语句顺序返回JSON数据。
+所有接口一律按照数据库建表语句的「字段名称」作为属性名，返回JSON数据。
 
 考虑到前端适配，接口并非REST风格。所有接口都使用GET方法请求，不需要PUT、DELETE等方法。
 
@@ -66,7 +66,18 @@ GET /websites/delete/1000
 1.返回网页信息列表
 GET /textstorage/list
 返回结果示例：
-[{"uid":1,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶一下，你就知道。"}]
+[{"uid":1,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶一下，你就知道。"},{"uid":2,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶两下，你就知道。"}]
+
+
+2.返回特定uid的网页信息
+GET /textstorage/{uid}
+示例1
+GET /textstorage/1
+{"uid":1,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶一下，你就知道。"}
+示例2
+GET /textstorage/2
+{"uid":2,"url":"http://www.baidu.com","hash":"4c3cf3b5285dd5253029ef20a","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶两下，你就知道。"}
+
 ```
 
 **其他资源 /res/...**
@@ -83,7 +94,7 @@ GET /res/wordcloud
 
 ## 使用方法
 
-### Deploy
+### 部署
 
 在项目目录`/target`下有一个jar包，名字是nCovNews-0.0.1-SNAPSHOT.jar，直接执行这个文件就可以。
 
@@ -91,9 +102,11 @@ GET /res/wordcloud
 java -jar nCovNews-0.0.1-SNAPSHOT.jar
 ```
 
+但这样子会随着会话结束而导致进程退出，因此写了个启动脚本，直接执行目录下的`run`就可以了。
+
 注意在jar包的所在目录建一个文件夹`temp`，其中存放聚类和词云生成的图片。
 
-### 项目源代码
+### 如果你要打开项目源代码
 
-需要修改一下配置文件中的数据库连接信息。
+本项目由IDEA构建，开始需要maven构建一会，如果觉得太慢可以百度下maven换镜像源。
 
