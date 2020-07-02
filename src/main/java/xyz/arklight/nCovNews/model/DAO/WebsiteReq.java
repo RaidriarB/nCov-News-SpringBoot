@@ -5,7 +5,7 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 
 @Entity
-@Table(name="website_resquests")
+@Table(name= "website_requests")
 public class WebsiteReq {
 
     @Id
