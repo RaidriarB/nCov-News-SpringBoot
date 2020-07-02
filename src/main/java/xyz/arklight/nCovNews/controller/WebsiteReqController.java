@@ -12,6 +12,7 @@ import xyz.arklight.nCovNews.service.WebsiteReqService;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 
 @RestController
@@ -20,6 +21,14 @@ public class WebsiteReqController {
     @Autowired
     WebsiteReqService service;
 
+    /**
+     *
+     * @param request httpservlet的req
+     * @param op  两个操作：delete或add
+     * @param url 待添加网站url的base64！
+     * @param name 网站名称
+     * @return 是否成功的OpResult
+     */
     @RequestMapping(path = "/{op}/{url}/{name}")
     public OpResult WebReq(HttpServletRequest request,
                            @PathVariable String op,
@@ -58,10 +67,22 @@ public class WebsiteReqController {
                 return OpResult.FAILURE;
             }
 
+            //URL进行b64解码
+            try{
+                Base64.Decoder decoder = Base64.getDecoder();
+                byte[] decoded_url = decoder.decode(url.getBytes("utf-8"));
+                String newurl = new String(decoded_url);
+                System.out.println("Base64解码后："+newurl);
+                wreq.setSurl(newurl);
+            }catch (Exception e){
+                System.out.println("Base64解码时出错！");
+                e.printStackTrace();
+                return OpResult.FAILURE;
+            }
+
             wreq.setIp(ip);
             wreq.setRdtime(datetime);
             wreq.setName(name);
-            wreq.setSurl(url);
 
             //写入数据库操作
             try{
