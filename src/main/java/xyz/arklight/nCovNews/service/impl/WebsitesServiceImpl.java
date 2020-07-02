@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.arklight.nCovNews.model.bean.Websites;
+import xyz.arklight.nCovNews.model.DAO.Websites;
 import xyz.arklight.nCovNews.model.repo.WebsitesRepository;
 import xyz.arklight.nCovNews.service.WebsitesService;
 

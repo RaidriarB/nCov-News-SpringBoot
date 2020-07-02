@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.arklight.nCovNews.model.bean.TextStorage;
+import xyz.arklight.nCovNews.model.DAO.TextStorage;
 import xyz.arklight.nCovNews.model.repo.TextStorageRepository;
 import xyz.arklight.nCovNews.service.TextStorageService;
 

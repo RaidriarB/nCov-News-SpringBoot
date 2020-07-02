@@ -1,7 +1,6 @@
 package xyz.arklight.nCovNews.service;
 
-import org.springframework.stereotype.Service;
-import xyz.arklight.nCovNews.model.bean.TextStorage;
+import xyz.arklight.nCovNews.model.DAO.TextStorage;
 
 import java.util.List;
 

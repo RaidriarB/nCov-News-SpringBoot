@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.arklight.nCovNews.model.bean.SiteInfo;
-import xyz.arklight.nCovNews.model.bean.StatResult;
-import xyz.arklight.nCovNews.model.bean.TextStorage;
+import xyz.arklight.nCovNews.model.DAO.StatResult;
+import xyz.arklight.nCovNews.model.DAO.TextStorage;
 import xyz.arklight.nCovNews.service.StatResultService;
 import xyz.arklight.nCovNews.service.TextStorageService;
 

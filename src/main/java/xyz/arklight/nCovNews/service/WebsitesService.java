@@ -1,7 +1,6 @@
 package xyz.arklight.nCovNews.service;
 
-import org.springframework.stereotype.Service;
-import xyz.arklight.nCovNews.model.bean.Websites;
+import xyz.arklight.nCovNews.model.DAO.Websites;
 
 import java.util.List;
 

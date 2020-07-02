@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.arklight.nCovNews.model.bean.OpResult;
-import xyz.arklight.nCovNews.model.bean.Websites;
+import xyz.arklight.nCovNews.model.DAO.Websites;
 import xyz.arklight.nCovNews.service.WebsitesService;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package xyz.arklight.nCovNews.model.bean;
+package xyz.arklight.nCovNews.model.DAO;
 
 import com.sun.istack.NotNull;
 

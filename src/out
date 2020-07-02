@@ -1,0 +1,47 @@
+[01;34m.[00m
+├── [01;34mmain[00m
+│   ├── [01;34mjava[00m
+│   │   └── [01;34mxyz[00m
+│   │       └── [01;34marklight[00m
+│   │           └── [01;34mnCovNews[00m
+│   │               ├── NCovNewsApplication.java
+│   │               ├── [01;34mconfiguration[00m
+│   │               │   └── MVCConfig.java
+│   │               ├── [01;34mcontroller[00m
+│   │               │   ├── AdminController.java
+│   │               │   ├── ResourceController.java
+│   │               │   ├── StatResultController.java
+│   │               │   ├── TextStorageController.java
+│   │               │   └── WebsitesController.java
+│   │               ├── [01;34mmodel[00m
+│   │               │   ├── [01;34mbean[00m
+│   │               │   │   ├── OpResult.java
+│   │               │   │   ├── SiteInfo.java
+│   │               │   │   ├── StatResult.java
+│   │               │   │   ├── TextStorage.java
+│   │               │   │   └── Websites.java
+│   │               │   └── [01;34mrepo[00m
+│   │               │       ├── StatResultRepository.java
+│   │               │       ├── TextStorageRepository.java
+│   │               │       └── WebsitesRepository.java
+│   │               └── [01;34mservice[00m
+│   │                   ├── StatResultService.java
+│   │                   ├── TextStorageService.java
+│   │                   ├── WebsitesService.java
+│   │                   └── [01;34mimpl[00m
+│   │                       ├── StatResultServiceImpl.java
+│   │                       ├── TextStorageServiceImpl.java
+│   │                       └── WebsitesServiceImpl.java
+│   └── [01;34mresources[00m
+│       ├── application.properties
+│       ├── [01;34mstatic[00m
+│       │   ├── [01;34mcss[00m
+│       │   │   └── [01;32mdefault.css[00m
+│       │   └── [01;34mimages[00m
+│       │       └── [01;32mfavicon.ico[00m
+│       └── [01;34mtemplates[00m
+│           ├── TextStorageList.html
+│           └── TextStorageView.html
+└── out
+
+17 directories, 27 files
