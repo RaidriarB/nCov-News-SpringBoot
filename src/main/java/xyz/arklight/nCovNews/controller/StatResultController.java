@@ -1,6 +1,7 @@
 package xyz.arklight.nCovNews.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import xyz.arklight.nCovNews.model.bean.SiteInfo;
@@ -67,9 +68,9 @@ public class StatResultController {
                     int hsd_int = (int)hsd;
                     hot_spot_degree = String.valueOf(hsd_int);
 
-                    //可信度转为字符串
+                    //可信度转为百分比的字符串
                     double cfd = result.getConfidence();
-                    confidence = new DecimalFormat("0.000000").format(cfd);
+                    confidence = new DecimalFormat("00.00%").format(cfd);
 
                     break;
                 } else {
@@ -89,13 +90,15 @@ public class StatResultController {
      * 获取降序排序的统计信息列表
      * @return 降序的统计信息列表
      */
-    @RequestMapping("/list")
-    public List<SiteInfo> getSortedStatResultList(){
+    @RequestMapping("/list/{num}")
+    public List<SiteInfo> getSortedStatResultList(@PathVariable int num){
         List<SiteInfo> list = getStatResultList();
         Collections.sort(list,(s1,s2)->{
             return - ( Integer.parseInt(s1.getHot_spot_degree())
                     - Integer.parseInt(s2.getHot_spot_degree()) );
         });
-        return list;
+        return list.subList(0,num);
     }
+
+
 }

@@ -38,8 +38,8 @@ GET webreq/add/http://test.com/testname
 **网页统计信息 /statresult/...**
 
 ```
-1.返回按照热度降序排序的网页统计信息列表
-GET /statresult/list
+1.返回按照热度降序排序的网页统计信息列表的前num条
+GET /statresult/list/{num}
 返回结果示例：
 [{"uid":180,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-06-28/doc-iircuyvk0885954.shtml","hot_spot_degree":"4655","confidence":"0.954316"},{"uid":335,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-06-29/doc-iirczymk9606132.shtml","hot_spot_degree":"4297","confidence":"0.952713"},{"uid":186,"keyword":"新冠","url":"https://news.sina.com.cn/c/2020-06-28/doc-iirczymk9412741.shtml","hot_spot_degree":"4034","confidence":"0.954198"},{"uid":169,"keyword":"确诊","url":"https://news.sina.com.cn/c/2020-06-28/doc-iircuyvk0883475.shtml","hot_spot_degree":"4031","confidence":"0.953492"}]
 ```
