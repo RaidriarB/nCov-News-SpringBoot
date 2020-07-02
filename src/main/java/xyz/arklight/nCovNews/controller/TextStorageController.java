@@ -33,4 +33,15 @@ public class TextStorageController {
         return textStorage;
     }
 
+    @RequestMapping("/top/{num}")
+    public List<TextStorage> getTop10(@PathVariable int num){
+        try{
+            List <TextStorage> result = textStorageService.findTop().subList(0,num);
+            return result;
+        }catch (Exception e){
+            return null;
+        }
+
+    }
+
 }

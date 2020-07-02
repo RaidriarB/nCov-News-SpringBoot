@@ -18,9 +18,22 @@
 
 考虑到前端适配，接口并非REST风格。所有接口都使用GET方法请求，不需要PUT、DELETE等方法。
 
+**监测网站反馈信息 /webreq/...**
+
+```
+1.提出一个添加或删除监测网站的请求，后台会记录IP与请求时间。
+GET /add/{url}/{name}
+GET /delete/{url}/{name}
+返回结果为是否成功的消息。
+{"code":1,"message":"操作成功"}
+{"code":-1,"message":"操作失败"}
+```
+
+
+
 **网页统计信息 /statresult/...**
 
-```json
+```
 1.返回按照热度降序排序的网页统计信息列表
 GET /statresult/list
 返回结果示例：
@@ -29,7 +42,7 @@ GET /statresult/list
 
 **监测网站列表 /websites/...**
 
-```json
+```
 1.返回监测网站列表
 GET /websites/list
 返回结果示例:
@@ -56,7 +69,7 @@ GET /websites/delete/1000
 
 **网页爬取信息 /textstorage/...**
 
-```json
+```
 1.返回网页信息列表
 GET /textstorage/list
 返回结果示例：
@@ -72,11 +85,18 @@ GET /textstorage/1
 GET /textstorage/2
 {"uid":2,"url":"http://www.baidu.com","hash":"4c3cf3b5285dd5253029ef20a","title":"http://www.baidu.com","publish_time":"2020-06-28 12:00:00","content":"双叶两下，你就知道。"}
 
+3.返回前num条网页消息，按照最新时间排序，注意num不能超过总个数哦
+GET /textstorage/top/{num}
+示例  GET /textstorage/top/2
+[{"uid":1,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-29 12:00:00","content":"双叶两下，你就知道。"},{"uid":2,"url":"http://www.baidu.com","hash":"1a3cf4124cd5253a904f23c","title":"http://www.baidu.com","publish_time":"2020-06-27 12:00:00","content":"双叶一下，你就知道。"}]
+
 ```
 
 **其他资源 /res/...**
 
 ```
+这部分正在修改中
+
 1.返回聚类图片
 GET /res/cluster
 

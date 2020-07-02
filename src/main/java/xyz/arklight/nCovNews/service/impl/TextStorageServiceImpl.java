@@ -25,18 +25,6 @@ public class TextStorageServiceImpl implements TextStorageService {
     }
 
     @Override
-    public TextStorage insertByTextStorage(TextStorage textStorage) {
-        LOGGER.info("新增 " + TITLE + textStorage.toString());
-        return repository.save(textStorage);
-    }
-
-    @Override
-    public TextStorage update(TextStorage textStorage) {
-        LOGGER.info("更新 " + TITLE + textStorage.toString());
-        return repository.save(textStorage);
-    }
-
-    @Override
     public TextStorage delete(Long uid) {
         TextStorage textStorage = repository.findById(uid).get();
         repository.delete(textStorage);
@@ -48,6 +36,11 @@ public class TextStorageServiceImpl implements TextStorageService {
     public TextStorage findByUid(Long uid) {
         LOGGER.info("获取"+TITLE+"ID：" + uid);
         return repository.findById(uid).get();
+    }
+
+    @Override
+    public List<TextStorage> findTop() {
+        return repository.selectTop();
     }
 }
 

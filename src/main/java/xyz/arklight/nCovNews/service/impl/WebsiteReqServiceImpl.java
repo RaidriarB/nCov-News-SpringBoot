@@ -1,6 +1,7 @@
 package xyz.arklight.nCovNews.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import xyz.arklight.nCovNews.model.DAO.WebsiteReq;
 import xyz.arklight.nCovNews.model.repo.WebsiteReqRepository;
 import xyz.arklight.nCovNews.service.WebsiteReqService;
@@ -8,6 +9,7 @@ import xyz.arklight.nCovNews.service.WebsitesService;
 
 import java.util.List;
 
+@Service
 public class WebsiteReqServiceImpl implements WebsiteReqService {
 
     //没写log
