@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 import xyz.arklight.nCovNews.model.bean.SiteInfo;
 import xyz.arklight.nCovNews.model.DAO.StatResult;
 import xyz.arklight.nCovNews.model.DAO.TextStorage;
+import xyz.arklight.nCovNews.model.bean.StatViewResult;
 import xyz.arklight.nCovNews.service.StatResultService;
+import xyz.arklight.nCovNews.service.StatStorageService;
 import xyz.arklight.nCovNews.service.TextStorageService;
 
 import java.text.DecimalFormat;
@@ -27,6 +29,8 @@ public class StatResultController {
     @Autowired
     TextStorageService textStorageService;
 
+    @Autowired
+    StatStorageService statStorageService;
     /**
      * 获取统计信息的列表
      * @return 统计信息列表
@@ -49,8 +53,10 @@ public class StatResultController {
             for (StatResult result : resultList) {
                 if (result.getNo().equals(uid)) {
                     try {
-                        System.out.println(result.getCategory()+"，"+SiteInfo.keywordlist[result.getCategory()]);
-                        keyword = SiteInfo.keywordlist[result.getCategory()];
+                        //keyword = SiteInfo.keywordlist[result.getCategory()];
+                        StatViewResult svr = new StatViewResult(statStorageService.getStatStorageList().get(0));
+                        keyword = svr.getKeywords()[result.getCategory()];
+                        System.out.println(result.getCategory()+"，"+keyword);
                     } catch (Exception e) {
                         e.printStackTrace();
                         System.out.println("该网站数据的catagory字段不合法！应该在0-4之间");
