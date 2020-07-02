@@ -22,10 +22,14 @@
 
 ```
 1.提出一个添加或删除监测网站的请求，后台会记录IP与请求时间。
-GET /add/{url}/{name}
-GET /delete/{url}/{name}
-返回结果为是否成功的消息。
+【注意！】{url}参数应该使用base64进行编码！否则会出错
+GET /webreq/add/{url}/{name}
+GET /webreq/delete/{url}/{name}
+
+示例： 
+GET webreq/add/aHR0cDovL3Rlc3QuMTIzLmNvbQo=/testname
 {"code":1,"message":"操作成功"}
+GET webreq/add/http://test.com/testname
 {"code":-1,"message":"操作失败"}
 ```
 
